@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   const [errors, setErrors] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // clear errors after 5 secondsrrrr
+  // clear errors after 5 seconds
   useEffect(() => {
     if (errors.length > 0) {
       const timer = setTimeout(() => {

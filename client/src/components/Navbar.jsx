@@ -9,7 +9,7 @@ export function Navbar() {
   return (
     <nav className="bg-zinc-700 my-3 flex justify-between py-5 px-10 rounded-lg">
       <h1 className="text-2xl font-bold">
-        <Link to={isAuthenticated ? "/tasks" : "/"}>dsfsdgf</Link>
+        <Link to={isAuthenticated ? "/tasks" : "/"}>Evotes</Link>
       </h1>
       <ul className="flex gap-x-2">
         {isAuthenticated ? (
@@ -18,7 +18,10 @@ export function Navbar() {
               Welcome {user.username}
             </li>
             <li>
-              <ButtonLink to="/add-task">Add Task</ButtonLink>
+              <ButtonLink to="/add-task">Add Vote</ButtonLink>
+            </li>
+            <li>
+              <ButtonLink to="/add-task">candidate</ButtonLink>
             </li>
             <li>
               <Link to="/" onClick={() => logout()}>
@@ -28,12 +31,23 @@ export function Navbar() {
           </>
         ) : (
           <>
+           <li>
+              <ButtonLink to="/">home</ButtonLink>
+            </li>
+
+            <li>
+              <ButtonLink to="/services">Services</ButtonLink>
+            </li>
+
             <li>
               <ButtonLink to="/login">Login</ButtonLink>
             </li>
+           
             <li>
               <ButtonLink to="/register">Register</ButtonLink>
-              
+            </li>
+            <li>
+              <ButtonLink to="/contact"> Contact</ButtonLink>
             </li>
           </>
         )}

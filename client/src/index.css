@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: #000000;
+body {
+  /* Cambiar el color de fondo a transparente */
+  background: transparent;
   color: white;
-
+  /* Agregar una imagen de fondo */
+  background-image: url('src/img/fondo3.GIF'); /* Reemplaza 'ruta/a/la/imagen.jpg' con la ruta de tu imagen */
+  background-size: cover; /* Para cubrir todo el área del cuerpo */
+  background-position: center; /* Para centrar la imagen */
+}
+.content-container {
+  height: calc(100vh - theme("spacing.20"));
 }
