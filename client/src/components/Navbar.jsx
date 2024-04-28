@@ -18,7 +18,10 @@ export function Navbar() {
               Welcome {user.username}
             </li>
             <li>
-              <ButtonLink to="/add-task">Add Vote</ButtonLink>
+              <ButtonLink to="/votes">Add Vote</ButtonLink>
+            </li>
+            <li>
+              <ButtonLink to="/add-task">Add task</ButtonLink>
             </li>
             <li>
               <ButtonLink to="/add-task">candidate</ButtonLink>
