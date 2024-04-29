@@ -5,6 +5,8 @@ import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
 import taksRoutes from "./routes/tasks.routes.js";
+import voteRoutes from "./routes/vote.routes.js"; // Importa las rutas de votos
+
 import { FRONTEND_URL } from "./config.js";
 
 const app = express();
@@ -20,14 +22,15 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
-app.use("/api", taksRoutes);
+app.use("/api/tasks", taksRoutes); // Monta las rutas de tareas
+app.use("/api/votes", voteRoutes); // Monta las rutas de votos
 
 if (process.env.NODE_ENV === "production") {
   const path = await import("path");
   app.use(express.static("client/dist"));
 
   app.get("*", (req, res) => {
-    console.log(path.resolve("client", "dist", "index.html") );
+    console.log(path.resolve("client", "dist", "index.html"));
     res.sendFile(path.resolve("client", "dist", "index.html"));
   });
 }

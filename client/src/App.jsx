@@ -12,7 +12,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { TasksPage } from "./pages/TasksPage";
 import { TaskProvider } from "./context/tasksContext";
 import Contact from "./pages/Contact";
-import Votes from "./pages/Votes";
+
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 
 
@@ -32,7 +32,7 @@ function App() {
              
               <Route path="/register" element={<RegisterPage />} />
               <Route element={<ProtectedRoute />}>
-              <Route path="/votes" element={<Votes />} />
+             
                 <Route path="/tasks" element={<TasksPage />} />
                 <Route path="/add-task" element={<TaskFormPage />} />
                 <Route path="/tasks/:id" element={<TaskFormPage />} />
