@@ -35,7 +35,7 @@ export function Navbar() {
               <ButtonLink to="/add-task" index={1} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-green-700 transition duration-300 ${buttonColors[1]}`}>Add task</ButtonLink>
             </li>
             <li>
-              <ButtonLink to="/add-task" index={2} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-yellow-700 transition duration-300 ${buttonColors[2]}`}>Candidate</ButtonLink>
+              <ButtonLink to="/candidates" index={2} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-yellow-700 transition duration-300 ${buttonColors[2]}`}>Candidate</ButtonLink>
             </li>
             <li>
               <Link to="/" onClick={() => logout()} className="text-red-500 hover:underline">Logout</Link>

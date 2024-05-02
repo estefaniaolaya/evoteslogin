@@ -16,6 +16,7 @@ import { TaskProvider } from "./context/tasksContext";
 import Contact from "./pages/Contact";
 
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+import Candidates from "./pages/Candidates";
 
 
 
@@ -37,6 +38,7 @@ function App() {
               <Route element={<ProtectedRoute />}>
              
                 <Route path="/tasks" element={<TasksPage />} />
+                <Route path="/candidates" element={<Candidates />} />
                 <Route path="/add-task" element={<TaskFormPage />} />
                 <Route path="/tasks/:id" element={<TaskFormPage />} />
                 <Route path="/profile" element={<h1>Profile</h1>} />

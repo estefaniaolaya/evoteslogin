@@ -1,44 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logoImage from "../img/ico.ico";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8">
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center">
-          <div>
-            <h2 className="text-lg font-bold">Síguenos</h2>
-            <div className="flex mt-2">
-              <a href="#" className="mr-4">
-                <i className="fab fa-facebook-square text-lg"></i>
+    <section className="bg-gradient-to-r from-blue-500 to-purple-500 py-8">
+      <footer className="pie-pagina container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="box flex items-center justify-center md:justify-start">
+            <figure className="mr-4">
+              <a href="#">
+              <img src={logoImage} alt="Logo" className="h-12 w-auto" />
               </a>
-              <a href="#" className="mr-4">
-                <i className="fab fa-twitter-square text-lg"></i>
-              </a>
-              <a href="#" className="mr-4">
-                <i className="fab fa-instagram-square text-lg"></i>
-              </a>
+            </figure>
+            <p className="text-white">Andres Camilo Polania Bobadilla</p>
+          </div>
+
+          <div className="box">
+            <h2 className="text-white mb-4">SÍGUENOS</h2>
+            <div className="red-social flex space-x-4">
+              <a href="#" className="text-white fab fa-facebook" aria-label="Facebook"></a>
+              <a href="#" className="text-white fab fa-instagram" aria-label="Instagram"></a>
+              <a href="#" className="text-white fab fa-twitter" aria-label="Twitter"></a>
+              <a href="#" className="text-white fab fa-youtube" aria-label="YouTube"></a>
             </div>
           </div>
-          <div>
-            <h2 className="text-lg font-bold">Enlaces útiles</h2>
-            <ul className="mt-2">
-              <li><Link to="/about">Acerca de nosotros</Link></li>
-              <li><Link to="/contact">Contacto</Link></li>
-              <li><Link to="/terms">Términos y condiciones</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-lg font-bold">Contacto</h2>
-            <p className="mt-2">Email: contacto@example.com</p>
-            <p>Teléfono: +1234567890</p>
+
+          <div className="box text-right">
+            <small className="text-white">&copy; 2024 <b>ANDRES POLANI</b> - Todos los Derechos Reservados.</small>
           </div>
         </div>
-        <div className="mt-4 text-center">
-          <p>Derechos de autor © 2024 Easy Votes Security. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </section>
   );
 }
 
