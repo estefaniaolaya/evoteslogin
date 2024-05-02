@@ -2,40 +2,39 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="max-w-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex">
-      <div className="w-1/2 pr-4">
+    <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg overflow-hidden">
+      <div className="px-6 py-8">
         <div className="mb-6">
-          <p className="text-gray-700 text-sm">Details:</p>
-          <p className="text-gray-700 text-sm">To organize the data of your institution, please contact</p>
-          
+          <h2 className="text-3xl font-semibold text-gray-800 mb-2">Contact Us</h2>
+          <p className="text-gray-600 text-sm">To organize the data of your institution, please contact:</p>
         </div>
 
         <div className="mb-6">
-          <p className="text-gray-700 text-sm">Contact Details:</p>
-          <p className="text-gray-700 text-sm">Email: andrescamilopolaniabobadilla</p>
-          <p className="text-gray-700 text-sm">Phone: +3205729436</p>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Contact Details:</h3>
+          <p className="text-gray-600 text-sm">Email: andrescamilopolaniabobadilla</p>
+          <p className="text-gray-600 text-sm">Phone: +3205729436</p>
         </div>
 
         <div className="mt-6">
-          <p className="text-gray-700 text-sm">Follow us on social media:</p>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Follow us on social media:</h3>
           <div className="flex mt-2">
-            <a href="#" className="mr-4">
-              <i className="fab fa-facebook-square text-blue-500 text-lg"></i>
+            <a href="#" className="mr-4 text-blue-500 hover:text-blue-700">
+              <i className="fab fa-facebook-square text-lg"></i>
             </a>
-            <a href="#" className="mr-4">
-              <i className="fab fa-twitter-square text-blue-500 text-lg"></i>
+            <a href="#" className="mr-4 text-blue-500 hover:text-blue-700">
+              <i className="fab fa-twitter-square text-lg"></i>
             </a>
-            <a href="#" className="mr-4">
-              <i className="fab fa-instagram-square text-blue-500 text-lg"></i>
+            <a href="#" className="mr-4 text-blue-500 hover:text-blue-700">
+              <i className="fab fa-instagram-square text-lg"></i>
             </a>
           </div>
         </div>
       </div>
-      <div className="w-1/2 pl-4">
-        <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+
+      <div className="bg-gray-100 py-4 px-6">
         <form>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="name">
               Name
             </label>
             <input
@@ -46,7 +45,7 @@ function Contact() {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="email">
               Email
             </label>
             <input
@@ -57,7 +56,7 @@ function Contact() {
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="message">
               Message
             </label>
             <textarea
@@ -67,9 +66,9 @@ function Contact() {
               rows="6"
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex justify-end">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
               type="button"
             >
               Send

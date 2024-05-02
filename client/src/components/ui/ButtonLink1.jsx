@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { Button } from 'primereact/button';
-
-<Button label="Submit" />
 
 export const ButtonLink1 = ({ to, children }) => (
-  <Link to={to} className="bg-indigo-500 px-4 py-1 rounded-md">
+  <Link
+    to={to}
+    className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+  >
     {children}
   </Link>
 );
-

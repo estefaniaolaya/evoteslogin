@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
+import  Footer  from "./components/Footer";
 import { AuthProvider } from "./context/authContext";
 import { ProtectedRoute } from "./routes";
 
 import HomePage from "./pages/HomePage";
 import Services from "./pages/Services";
+
 
 import RegisterPage from "./pages/RegisterPage";
 import { TaskFormPage } from "./pages/TaskFormPage";
@@ -24,6 +26,7 @@ function App() {
         <BrowserRouter>
           <main className="container content-container mx-auto px-10 md:px-0">
             <Navbar />
+           
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
@@ -39,6 +42,7 @@ function App() {
                 <Route path="/profile" element={<h1>Profile</h1>} />
               </Route>
             </Routes>
+            <Footer />
           </main>
         </BrowserRouter>
       </TaskProvider>
