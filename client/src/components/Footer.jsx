@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logoImage from "../img/ico.ico";
+import SocialButtons from '../components/ui/SocialButtons'; // Ruta correcta al componente SocialButtons
 
 const Footer = () => {
+  const socials = [
+    { name: 'GitHub', url: 'https://github.com/tu-usuario', icon: 'github' },
+    { name: 'Twitter', url: 'https://twitter.com/tu-usuario', icon: 'twitter' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/tu-usuario', icon: 'linkedin' },
+    { name: 'Instagram', url: 'https://www.instagram.com/tu-usuario', icon: 'instagram' },
+  ];
+
   return (
     <section className="bg-gradient-to-r from-blue-500 to-purple-500 py-8">
       <footer className="pie-pagina container mx-auto">
@@ -10,7 +18,7 @@ const Footer = () => {
           <div className="box flex items-center justify-center md:justify-start">
             <figure className="mr-4">
               <a href="#">
-              <img src={logoImage} alt="Logo" className="h-12 w-auto" />
+                <img src={logoImage} alt="Logo" className="h-12 w-auto" />
               </a>
             </figure>
             <p className="text-white">Andres Camilo Polania Bobadilla</p>
@@ -19,10 +27,7 @@ const Footer = () => {
           <div className="box">
             <h2 className="text-white mb-4">SÍGUENOS</h2>
             <div className="red-social flex space-x-4">
-              <a href="#" className="text-white fab fa-facebook" aria-label="Facebook"></a>
-              <a href="#" className="text-white fab fa-instagram" aria-label="Instagram"></a>
-              <a href="#" className="text-white fab fa-twitter" aria-label="Twitter"></a>
-              <a href="#" className="text-white fab fa-youtube" aria-label="YouTube"></a>
+              <SocialButtons socials={socials} />
             </div>
           </div>
 

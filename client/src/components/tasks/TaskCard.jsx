@@ -6,15 +6,6 @@ export function TaskCard({ task }) {
 
   return (
     <Card>
-         {/* Contenedor para la imagen */}
-         <div className="border-b border-gray-200 pb-4">
-        <img
-          src={task.image} // Asegúrate de tener la propiedad 'image' en tu objeto 'task' con la URL de la imagen
-          alt="Task Image"
-          className="w-full h-auto"
-        />
-      </div>
-
       <header className="flex justify-between">
         <h1 className="text-2xl font-bold">{task.title}</h1>
         <div className="flex gap-x-2 items-center">

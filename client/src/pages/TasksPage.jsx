@@ -11,7 +11,7 @@ export function TasksPage() {
   }, []);
 
   return (
-    <>
+    <div className="flex flex-col items-center justify-center h-screen">
       {tasks.length === 0 && (
         <div className="flex justify-center items-center p-10">
           <div>
@@ -28,6 +28,6 @@ export function TasksPage() {
           <TaskCard task={task} key={task._id} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

@@ -43,7 +43,7 @@ function Register() {
               autoFocus
             />
             {errors.username?.message && (
-              <p className="text-sky-500">{errors.username?.message}</p>
+              <p className="text-red-500">{errors.username?.message}</p>
             )}
           </div>
 
@@ -55,7 +55,7 @@ function Register() {
               {...register("email")}
             />
             {errors.email?.message && (
-              <p className="text-sky-500">{errors.email?.message}</p>
+              <p className="text-red-500">{errors.email?.message}</p>
             )}
           </div>
 
@@ -68,7 +68,7 @@ function Register() {
               {...register("password")}
             />
             {errors.password?.message && (
-              <p className="text-sky-500">{errors.password?.message}</p>
+              <p className="text-red-500">{errors.password?.message}</p>
             )}
           </div>
 
@@ -81,7 +81,7 @@ function Register() {
               {...register("confirmPassword")}
             />
             {errors.confirmPassword?.message && (
-              <p className="text-sky-500">{errors.confirmPassword?.message}</p>
+              <p className="text-red-500">{errors.confirmPassword?.message}</p>
             )}
           </div>
 
@@ -110,7 +110,7 @@ function Register() {
         </form>
         <p className="text-center">
           Already Have an Account?{" "}
-          <Link className="text-sky-500" to="/login">
+          <Link className="text-red-500" to="/login">
             Login
           </Link>
         </p>

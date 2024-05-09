@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 import Candidates from "./pages/Candidates";
+import Votes from "./pages/Votes";
 
 
 
@@ -39,6 +40,7 @@ function App() {
              
                 <Route path="/tasks" element={<TasksPage />} />
                 <Route path="/candidates" element={<Candidates />} />
+                <Route path="/votes" element={<Votes />} />
                 <Route path="/add-task" element={<TaskFormPage />} />
                 <Route path="/tasks/:id" element={<TaskFormPage />} />
                 <Route path="/profile" element={<h1>Profile</h1>} />
