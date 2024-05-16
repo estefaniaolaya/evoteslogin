@@ -1,96 +1,146 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 import { ButtonLink } from "./ui/ButtonLink";
 import logoImage from "../img/ico.ico";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faVoteYea, faTasks, faSignInAlt, faUserPlus, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
-// Define una lista de colores para cada botón
-const buttonColors = [
-  "bg-purple-200",
-  "bg-green-200",
-  "bg-yellow-600",
-  "bg-red-600",
-  "bg-purple-600",
-];
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faVoteYea,
+  faTasks,
+  faSignInAlt,
+  faUserPlus,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 export function Navbar() {
   const { isAuthenticated, logout, user } = useAuth();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024); // Define el ancho mínimo para considerar una pantalla grande (lg)
+    };
+
+    handleResize(); // Verificar el tamaño inicial de la pantalla al cargar la página
+
+    window.addEventListener("resize", handleResize); // Agregar event listener para detectar cambios de tamaño de pantalla
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Remover event listener al desmontar el componente
+    };
+  }, []);
 
   return (
-    <nav className="bg-gradient-to-r from-blue-500 to-purple-500 my-3 flex justify-between py-5 px-10 rounded-lg shadow-md"> 
-      <Link to={isAuthenticated ? "/" : "/"}>
-        <img src={logoImage} alt="Logo" className="h-12 w-auto" />
-      </Link>
+    <nav className="bg-gradient-to-r from-blue-500 to-purple-500 my-3 py-5 px-10 rounded-lg shadow-md">
+      <div className="flex justify-between items-center">
+        <Link to={isAuthenticated ? "/" : "/"}>
+          <img src={logoImage} alt="Logo" className="h-12 w-auto" />
+        </Link>
 
-      <ul className="flex gap-x-4 items-center">
-        {isAuthenticated ? (
-          <>
-            <li className="text-gray-800">
-              Welcome {user.username}
-            </li>
-            <li>
-              <ButtonLink to="/candidates" index={2} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-yellow-700 transition duration-300 ${buttonColors[2]}`}>
-                <FontAwesomeIcon icon={faUser} className="mr-2" />
-                Candidate
-              </ButtonLink>
-            </li>
-            <li>
-              <ButtonLink to="/votes" index={0} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-indigo-700 transition duration-300 ${buttonColors[0]}`}>
-                <FontAwesomeIcon icon={faVoteYea} className="mr-2" />
-                Add Vote
-              </ButtonLink>
-            </li>
-            <li>
-              <ButtonLink to="/add-task" index={1} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-green-700 transition duration-300 ${buttonColors[1]}`}>
-                <FontAwesomeIcon icon={faTasks} className="mr-2" />
-                Add Task
-              </ButtonLink>
-            </li>
-        
-            <li>
-              <Link to="/" onClick={() => logout()} className="text-red-500 hover:underline">
-                <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
-                Logout
-              </Link>
-            </li>
-          </>
-        ) : (
-          <>
-            <li>
-              <ButtonLink to="/" index={3} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-gray-700 transition duration-300 ${buttonColors[3]}`}>
-                <FontAwesomeIcon icon={faVoteYea} className="mr-2" />
-                Votaciones online
-              </ButtonLink>
-            </li>
-            <li>
-              <ButtonLink to="/services" index={4} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-gray-700 transition duration-300 ${buttonColors[4]}`}>
-                <FontAwesomeIcon icon={faTasks} className="mr-2" />
-                Services
-              </ButtonLink>
-            </li>
-            <li>
-              <ButtonLink to="/login" index={0} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-indigo-700 transition duration-300 ${buttonColors[0]}`}>
-                <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
-                Login
-              </ButtonLink>
-            </li>
-            <li>
-              <ButtonLink to="/register" index={1} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-green-700 transition duration-300 ${buttonColors[1]}`}>
-                <FontAwesomeIcon icon={faUserPlus} className="mr-2" />
-                Register
-              </ButtonLink>
-            </li>
-            <li>
-              <ButtonLink to="/contact" index={2} className={`inline-block px-6 py-3 text-sm leading-none border rounded-lg text-white hover:text-white hover:bg-yellow-700 transition duration-300 ${buttonColors[2]}`}>
-                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                Contact
-              </ButtonLink>
-            </li>
-          </>
-        )}
-      </ul>
+        <button
+          className="lg:hidden text-white focus:outline-none"
+          onClick={handleMenuToggle}
+        >
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {isMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+
+        <ul className={`lg:flex ${isMenuOpen || isLargeScreen ? "block" : "hidden"} mt-4 lg:mt-0 lg:items-center gap-x-4`}>
+          {isAuthenticated ? (
+            <>
+              <li className={isLargeScreen ? "text-gray-800" : "hidden lg:block"}>Welcome {user.username}</li>
+              <li>
+                <ButtonLink to="/candidates" textColor="black">
+                  <FontAwesomeIcon icon={faUser} className="mr-2" />
+                  {isMenuOpen || isLargeScreen ? "Candidate" : <span className="lg:hidden">Cand.</span>}
+                </ButtonLink>
+              </li>
+              <li>
+                <ButtonLink to="/votes" textColor="black">
+                  <FontAwesomeIcon icon={faVoteYea} className="mr-2" />
+                  {isMenuOpen || isLargeScreen ? "Add Vote" : <span className="lg:hidden">Vote</span>}
+                </ButtonLink>
+              </li>
+              <li>
+                <ButtonLink to="/add-task" textColor="black">
+                  <FontAwesomeIcon icon={faTasks} className="mr-2" />
+                  {isMenuOpen || isLargeScreen ? "Add Task" : <span className="lg:hidden">Task</span>}
+                </ButtonLink>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  onClick={() => logout()}
+                  className="text-red-500 hover:underline flex items-center"
+                >
+                  <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
+                  {isMenuOpen || isLargeScreen ? "Logout" : <span className="lg:hidden">Logout</span>}
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <ButtonLink to="/" textColor="black">
+                  <FontAwesomeIcon icon={faVoteYea} className="mr-2" />
+                  {isMenuOpen || isLargeScreen ? "Votes Online" : <span className="lg:hidden">Votes</span>}
+                </ButtonLink>
+              </li>
+              <li>
+                <ButtonLink to="/services" textColor="black">
+                  <FontAwesomeIcon icon={faUser} className="mr-2" />
+                  {isMenuOpen || isLargeScreen ? "Services" : <span className="lg:hidden">Cands.</span>}
+                </ButtonLink>
+              </li>
+              <li>
+                <ButtonLink to="/login" textColor="black">
+                  <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
+                  {isMenuOpen || isLargeScreen ? "Login" : <span className="lg:hidden">Login</span>}
+                </ButtonLink>
+              </li>
+              <li>
+                <ButtonLink to="/register" textColor="red">
+                  <FontAwesomeIcon icon={faUserPlus} className="mr-2" />
+                  {isMenuOpen || isLargeScreen ? "Register" : <span className="lg:hidden">Reg.</span>}
+                </ButtonLink>
+              </li>
+              <li>
+                <ButtonLink to="/contact" textColor="black">
+                  <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                  {isMenuOpen || isLargeScreen ? "Contact" : <span className="lg:hidden">Cont.</span>}
+                </ButtonLink>
+              </li>
+            </>
+          )}
+        </ul>
+      </div>
     </nav>
   );
 }

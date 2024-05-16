@@ -1,28 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Define una lista de colores para cada botón
-const buttonColors = [
-  "bg-purple-400",
-  "bg-green-300",
-  "bg-yellow-300",
-  "bg-red-200",
-  "bg-purple-200",
-];
+export const ButtonLink = ({ to, children, textColor }) => {
+  const buttonStyle = {
+    textDecoration: "none",
+    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+    opacity: "1",
+    transition: "opacity 0.4s, transform 0.4s",
+    backgroundColor: "#35EDF8", // Color de fondo deseado para todos los botones
+    color: textColor || "black", // Usar el color de texto pasado como prop o negro por defecto
+    padding: "8px 16px", // Ajustar el espaciado interno del botón
+    borderRadius: "8px", // Redondear las esquinas del botón
+    display: "inline-block",
+  };
 
-export const ButtonLink = ({ to, children, index }) => (
-  <Link
-    to={to}
-    className={`inline-block text-white font-bold py-2 px-4 rounded-lg transition duration-300 ${buttonColors[index]}`}
-    style={{
-      textDecoration: 'none',
-      boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-      opacity: '1',
-      transition: 'opacity 0.3s, transform 0.3s', // Agregar transición para opacidad y transformación
-    }}
-    onMouseEnter={(e) => { e.target.style.opacity = '0.8'; e.target.style.transform = 'translateY(-2px)'; }} // Reducir la opacidad y desplazar hacia arriba
-    onMouseLeave={(e) => { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }} // Restaurar la opacidad y posición original
-  >
-    {children}
-  </Link>
-);
+  const handleMouseEnter = (e) => {
+    e.target.style.opacity = "0.8";
+    e.target.style.transform = "translateY(-2px)";
+  };
+
+  const handleMouseLeave = (e) => {
+    e.target.style.opacity = "1";
+    e.target.style.transform = "translateY(0)";
+  };
+
+  return (
+    <Link
+      to={to}
+      style={buttonStyle}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {children}
+    </Link>
+  );
+};
