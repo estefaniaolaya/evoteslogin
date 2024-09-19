@@ -126,7 +126,7 @@ export function Navbar() {
                 </ButtonLink>
               </li>
               <li>
-                <ButtonLink to="/register" textColor="red">
+                <ButtonLink to="/register" textColor="black">
                   <FontAwesomeIcon icon={faUserPlus} className="mr-2" />
                   {isMenuOpen || isLargeScreen ? "Register" : <span className="lg:hidden">Reg.</span>}
                 </ButtonLink>

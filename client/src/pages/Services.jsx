@@ -11,17 +11,17 @@ function Services() {
               <div className="service-box bg-white p-8 rounded-lg shadow-md text-center transition duration-300 hover:shadow-lg transform hover:translate-x-2 hover:bg-purple-200">
                 <i className="fa-solid fa-code text-5xl text-indigo-600 mb-4"></i>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">Aplicación</h3>
-                <p className="text-gray-700">Implementar un sistema de gestión innovador destinado a proporcionar a las instituciones educativas una plataforma integral que facilite la realización de votaciones seguras y eficientes, al mismo tiempo que garantice un riguroso control de todas las actividades del gobierno escolar.</p>
+                <p className="text-gray-700">Implement an innovative management system aimed at providing educational institutions with a comprehensive platform that facilitates safe and efficient voting, while ensuring rigorous control of all school governance activities.</p>
               </div>
               <div className="service-box bg-white p-8 rounded-lg shadow-md text-center transition duration-300 hover:shadow-lg transform hover:translate-x-2 hover:bg-green-200">
                 <i className="fa-solid fa-object-group text-5xl text-green-600 mb-4"></i>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">Diseño</h3>
-                <p className="text-gray-700">El desarrollo contará con una arquitectura de sistema que satisfaga los componentes de software y una interfaz de usuario acorde con los requisitos predefinidos, tanto funcionales como no funcionales.</p>
+                <p className="text-gray-700">The development will feature a system architecture that satisfies the software components and a user interface in accordance with predefined requirements, both functional and non-functional.</p>
               </div>
               <div className="service-box bg-white p-8 rounded-lg shadow-md text-center transition duration-300 hover:shadow-lg transform hover:translate-x-2 hover:bg-yellow-200">
                 <i className="fa-solid fa-circle-question text-5xl text-yellow-600 mb-4"></i>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">Soporte</h3>
-                <p className="text-gray-700">Ofrezco servicios especializados de soporte y administración para páginas web. Mi enfoque se centra en garantizar un rendimiento óptimo, la resolución eficiente de problemas y la gestión efectiva de contenido.</p>
+                <p className="text-gray-700">I offer specialized website support and administration services. My focus is on ensuring optimal performance, efficient problem resolution, and effective content management.</p>
               </div>
             </div>
           </div>
