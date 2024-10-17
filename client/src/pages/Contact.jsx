@@ -11,8 +11,8 @@ function Contact() {
 
         <div className="mb-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-2">Contact Details:</h3>
-          <p className="text-gray-600 text-sm">Email: andrescamilopolaniabobadilla</p>
-          <p className="text-gray-600 text-sm">Phone: +3205729436</p>
+          <p className="text-gray-600 text-sm">Email:</p>
+          <p className="text-gray-600 text-sm">Phone: </p>
         </div>
 
         <div className="mt-6">

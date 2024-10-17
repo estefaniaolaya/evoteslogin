@@ -12,8 +12,8 @@ const Footer = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-blue-500 to-purple-500 py-8">
-      <footer className="pie-pagina container mx-auto rounded-lg shadow-lg px-6 py-4 bg-white">
+    <section className="bg-gradient-to-r from-green-900 to-blue-800 py-8">
+      <footer className="pie-pagina w-full rounded-lg shadow-lg px-6 py-4 bg-white">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="box flex items-center justify-center md:justify-start">
             <figure className="mr-4">
@@ -21,7 +21,7 @@ const Footer = () => {
                 <img src={logoImage} alt="Logo" className="h-12 w-auto" />
               </a>
             </figure>
-            <p className="text-gray-800">Andres Camilo Polania Bobadilla</p>
+            <p className="text-gray-800">Andres Camilo Polania, Estefania Olaya y Valentina Ramirez</p>
           </div>
 
           <div className="box">
@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
 
           <div className="box text-right">
-            <small className="text-gray-800">&copy; 2024 <b>ANDRES POLANI</b> - All rights reserved.</small>
+            <small className="text-gray-800">&copy; 2024 <b></b> - All rights reserved.</small>
           </div>
         </div>
       </footer>

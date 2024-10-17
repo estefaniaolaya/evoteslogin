@@ -26,7 +26,9 @@ export function LoginPage() {
   }, [isAuthenticated]);
 
   return (
-    <div className="h-[calc(100vh-100px)] flex items-center justify-center">
+    <section className="bg-gradient-to-r from-green-900 to-blue-800 p-10">
+      <header className="bg-white p-27" >
+    <section className="h-[calc(100vh-100px)] flex items-center justify-center bg-white-900">
       <Card>
         {loginErrors.map((error, i) => (
           <Message message={error} key={i} />
@@ -61,9 +63,11 @@ export function LoginPage() {
         </form>
 
         <p className="flex justify-center text-gray-700">
-          Don't have an account? <Link to="/register" className="text-blue-500">Sign up</Link>
+          Don't have an account? <Link to="/register" className="text-blue-900">Sign up</Link>
         </p>
       </Card>
-    </div>
+    </section>
+    </header>
+    </section>
   );
 }

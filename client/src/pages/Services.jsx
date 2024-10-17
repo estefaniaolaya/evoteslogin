@@ -2,7 +2,7 @@ import React from "react";
 
 function Services() {
   return (
-    <section className="bg-gradient-to-r from-blue-500 to-purple-500 p-10">
+    <section className="bg-gradient-to-r from-green-900 to-blue-800 p-10">
       <header className="bg-white p-10">
         <section className="servicios" id="servicios">
           <div className="contenido text-center">

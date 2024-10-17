@@ -24,21 +24,21 @@ export function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024); // Define el ancho mínimo para considerar una pantalla grande (lg)
+      setIsLargeScreen(window.innerWidth >= 1024);
     };
 
-    handleResize(); // Verificar el tamaño inicial de la pantalla al cargar la página
+    handleResize();
 
-    window.addEventListener("resize", handleResize); // Agregar event listener para detectar cambios de tamaño de pantalla
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize); // Remover event listener al desmontar el componente
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
-    <nav className="bg-gradient-to-r from-blue-500 to-purple-500 my-3 py-5 px-10 rounded-lg shadow-md">
-      <div className="flex justify-between items-center">
+    <nav className="w-full bg-gradient-to-r from-blue-500 to-purple-500 py-5 px-10 shadow-md">
+      <div className="w-full flex justify-between items-center">
         <Link to={isAuthenticated ? "/" : "/"}>
           <img src={logoImage} alt="Logo" className="h-12 w-auto" />
         </Link>
@@ -48,7 +48,7 @@ export function Navbar() {
           onClick={handleMenuToggle}
         >
           <svg
-            className="h-6 w-6"
+            className="h-5 w-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -72,26 +72,38 @@ export function Navbar() {
           </svg>
         </button>
 
-        <ul className={`lg:flex ${isMenuOpen || isLargeScreen ? "block" : "hidden"} mt-4 lg:mt-0 lg:items-center gap-x-4`}>
+        <ul
+          className={`lg:flex ${
+            isMenuOpen || isLargeScreen ? "block" : "hidden"
+          } mt-4 lg:mt-0 lg:items-center gap-x-4`}
+        >
           {isAuthenticated ? (
             <>
-              <li className={isLargeScreen ? "text-gray-800" : "hidden lg:block"}>Welcome {user.username}</li>
+              <li className={isLargeScreen ? "text-gray-900" : "hidden lg:block"}>
+                Welcome {user.username}
+              </li>
               <li>
                 <ButtonLink to="/candidates" textColor="black">
                   <FontAwesomeIcon icon={faUser} className="mr-2" />
-                  {isMenuOpen || isLargeScreen ? "Candidate" : <span className="lg:hidden">Cand.</span>}
+                  {isMenuOpen || isLargeScreen
+                    ? "Candidate"
+                    : <span className="lg:hidden">Cand.</span>}
                 </ButtonLink>
               </li>
               <li>
                 <ButtonLink to="/votes" textColor="black">
                   <FontAwesomeIcon icon={faVoteYea} className="mr-2" />
-                  {isMenuOpen || isLargeScreen ? "Add Vote" : <span className="lg:hidden">Vote</span>}
+                  {isMenuOpen || isLargeScreen
+                    ? "Add Vote"
+                    : <span className="lg:hidden">Vote</span>}
                 </ButtonLink>
               </li>
               <li>
                 <ButtonLink to="/add-task" textColor="black">
                   <FontAwesomeIcon icon={faTasks} className="mr-2" />
-                  {isMenuOpen || isLargeScreen ? "Add Task" : <span className="lg:hidden">Task</span>}
+                  {isMenuOpen || isLargeScreen
+                    ? "Add Task"
+                    : <span className="lg:hidden">Task</span>}
                 </ButtonLink>
               </li>
               <li>
@@ -101,7 +113,9 @@ export function Navbar() {
                   className="text-red-500 hover:underline flex items-center"
                 >
                   <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
-                  {isMenuOpen || isLargeScreen ? "Logout" : <span className="lg:hidden">Logout</span>}
+                  {isMenuOpen || isLargeScreen
+                    ? "Logout"
+                    : <span className="lg:hidden">Logout</span>}
                 </Link>
               </li>
             </>
@@ -110,31 +124,41 @@ export function Navbar() {
               <li>
                 <ButtonLink to="/" textColor="black">
                   <FontAwesomeIcon icon={faVoteYea} className="mr-2" />
-                  {isMenuOpen || isLargeScreen ? "Votes Online" : <span className="lg:hidden">Votes</span>}
+                  {isMenuOpen || isLargeScreen
+                    ? "Votes Online"
+                    : <span className="lg:hidden">Votes</span>}
                 </ButtonLink>
               </li>
               <li>
                 <ButtonLink to="/services" textColor="black">
                   <FontAwesomeIcon icon={faUser} className="mr-2" />
-                  {isMenuOpen || isLargeScreen ? "Services" : <span className="lg:hidden">Cands.</span>}
+                  {isMenuOpen || isLargeScreen
+                    ? "Services"
+                    : <span className="lg:hidden">Cands.</span>}
                 </ButtonLink>
               </li>
               <li>
                 <ButtonLink to="/login" textColor="black">
                   <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
-                  {isMenuOpen || isLargeScreen ? "Login" : <span className="lg:hidden">Login</span>}
+                  {isMenuOpen || isLargeScreen
+                    ? "Login"
+                    : <span className="lg:hidden">Login</span>}
                 </ButtonLink>
               </li>
               <li>
                 <ButtonLink to="/register" textColor="black">
                   <FontAwesomeIcon icon={faUserPlus} className="mr-2" />
-                  {isMenuOpen || isLargeScreen ? "Register" : <span className="lg:hidden">Reg.</span>}
+                  {isMenuOpen || isLargeScreen
+                    ? "Register"
+                    : <span className="lg:hidden">Reg.</span>}
                 </ButtonLink>
               </li>
               <li>
                 <ButtonLink to="/contact" textColor="black">
                   <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                  {isMenuOpen || isLargeScreen ? "Contact" : <span className="lg:hidden">Cont.</span>}
+                  {isMenuOpen || isLargeScreen
+                    ? "Contact"
+                    : <span className="lg:hidden">Cont.</span>}
                 </ButtonLink>
               </li>
             </>
