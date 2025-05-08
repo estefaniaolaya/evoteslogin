@@ -7,10 +7,10 @@ export const ButtonLink = ({ to, children, textColor }) => {
     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
     opacity: "1",
     transition: "opacity 0.4s, transform 0.4s",
-    backgroundColor: "#35EDF8", // Color de fondo deseado para todos los botones principales
+    backgroundColor: "white", // Color de fondo deseado para todos los botones principales
     color: textColor || "black", // Usar el color de texto pasado como prop o negro por defecto
-    padding: "8px 16px", // Ajustar el espaciado interno del botón
-    borderRadius: "8px", // Redondear las esquinas del botón
+    padding: "12px 9px", // Ajustar el espaciado interno del botón
+    borderRadius: "9px", // Redondear las esquinas del botón
     display: "inline-block",
   };
 

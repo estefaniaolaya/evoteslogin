@@ -1,82 +1,82 @@
 import React from "react";
+import votoo from "../img/votaciones.png"; // Import the image
 
 function Contact() {
   return (
-    <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg overflow-hidden">
-      <div className="px-6 py-8">
-        <div className="mb-6">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-2">Contact Us</h2>
-          <p className="text-gray-600 text-sm">To organize the data of your institution, please contact:</p>
+    <section
+      className="min-h-[1000px] relative flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: `url(${votoo})` }} // Establecer la imagen de fondo
+    >
+      {/* Capa oscura en la imagen de fondo */}
+      <div
+        className="absolute inset-0 w-full h-full bg-black opacity-50"
+        style={{ backgroundSize: "cover", backgroundPosition: "center" }}
+      ></div>
+
+      {/* Contenido del formulario */}
+      <div className="relative z-10 bg-white bg-opacity-90 shadow-xl rounded-lg max-w-2xl w-full p-10 backdrop-blur-md">
+        
+        {/* Título */}
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-800">Contact Us</h2>
+          <p className="text-gray-500 mt-2">We would love to hear from you. Please fill out this form.</p>
         </div>
 
-        <div className="mb-6">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Contact Details:</h3>
-          <p className="text-gray-600 text-sm">Email:</p>
-          <p className="text-gray-600 text-sm">Phone: </p>
-        </div>
-
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Follow us on social media:</h3>
-          <div className="flex mt-2">
-            <a href="#" className="mr-4 text-blue-500 hover:text-blue-700">
-              <i className="fab fa-facebook-square text-lg"></i>
-            </a>
-            <a href="#" className="mr-4 text-blue-500 hover:text-blue-700">
-              <i className="fab fa-twitter-square text-lg"></i>
-            </a>
-            <a href="#" className="mr-4 text-blue-500 hover:text-blue-700">
-              <i className="fab fa-instagram-square text-lg"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gray-100 py-4 px-6">
+        {/* Formulario */}
         <form>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="name">
-              Name
+          <div className="mb-6">
+            <label className="block text-gray-600 font-semibold mb-2" htmlFor="name">
+              Full Name
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition duration-200"
               id="name"
               type="text"
-              placeholder="Enter your name"
+              placeholder="Enter your full name"
             />
           </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="email">
-              Email
+          
+          <div className="mb-6">
+            <label className="block text-gray-600 font-semibold mb-2" htmlFor="email">
+              Email Address
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition duration-200"
               id="email"
               type="email"
               placeholder="Enter your email"
             />
           </div>
+          
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="message">
+            <label className="block text-gray-600 font-semibold mb-2" htmlFor="message">
               Message
             </label>
             <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition duration-200"
               id="message"
-              placeholder="Enter your message"
-              rows="6"
+              rows="5"
+              placeholder="Type your message here"
             />
           </div>
-          <div className="flex justify-end">
+
+          {/* Botón */}
+          <div className="text-center">
             <button
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
-              type="button"
+              className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300"
+              type="submit"
             >
-              Send
+              Send Message
             </button>
           </div>
         </form>
+
+        {/* Información de contacto */}
+        <div className="mt-10 text-center">
+          <p className="text-gray-500">Or contact us via email: <a href="mailto:support@example.com" className="text-blue-500">support@example.com</a></p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

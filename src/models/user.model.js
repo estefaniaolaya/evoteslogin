@@ -16,6 +16,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    hasVoted: {
+        type: Boolean,
+        default: false // Para saber si ya ha votado
+      }
 
 }, {
     timestamps:true

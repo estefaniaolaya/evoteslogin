@@ -7,7 +7,7 @@ body {
   background: rgba(0, 238, 255, 0);
   color: white;
   /* Agregar una imagen de fondo */
-  background-image: url('src/img/fondo3.GIF'); /* Reemplaza 'ruta/a/la/imagen.jpg' con la ruta de tu imagen */
+ 
   background-size: cover; /* Para cubrir todo el área del cuerpo */
   background-position: center; /* Para centrar la imagen */
 }

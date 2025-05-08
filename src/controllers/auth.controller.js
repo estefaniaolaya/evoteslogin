@@ -8,8 +8,15 @@ export const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
-    const userFound = await User.findOne({ email });
+    // Validar que el username contenga solo letras
+    const usernameRegex = /^[a-zA-Z]+$/; // Solo letras (mayúsculas o minúsculas)
+    if (!usernameRegex.test(username)) {
+      return res.status(400).json({
+        message: ["Username must contain only alphabetic characters"],
+      });
+    }
 
+    const userFound = await User.findOne({ email });
     if (userFound)
       return res.status(400).json({
         message: ["The email is already in use"],

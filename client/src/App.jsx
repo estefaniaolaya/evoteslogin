@@ -26,7 +26,7 @@ function App() {
     <AuthProvider>
       <TaskProvider>
         <BrowserRouter>
-          <main className="w-full px-10 md:px-0">
+          <main className="w-full px-0 md:px-0">
             <Navbar />
            
             <Routes>

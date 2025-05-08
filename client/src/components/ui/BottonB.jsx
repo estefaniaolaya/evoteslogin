@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // Define una lista de colores para cada botón
 const buttonColors = [
   "bg-purple-400",
-  "bg-green-300",
+  "bg-green-400",
   "bg-yellow-300",
   "bg-red-200",
   "bg-purple-200",

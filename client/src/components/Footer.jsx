@@ -12,7 +12,7 @@ const Footer = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-green-900 to-blue-800 py-8">
+    <section className="bg-gradient-to-r from-blue-900 to-purple-600 py-8">
       <footer className="pie-pagina w-full rounded-lg shadow-lg px-6 py-4 bg-white">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="box flex items-center justify-center md:justify-start">
